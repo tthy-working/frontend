@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword, updateProfile, signInWithPopup } from 'firebase/auth';
 import { auth, googleProvider } from '../firebase/config.js';
 import { useState } from "react";
+import './SignUp.css';
 
 export default function SignUp(){
   const [formData, setFormData] = useState({
@@ -51,71 +52,131 @@ export default function SignUp(){
   };
 
   return (
-    <div className="container-fluid p-4">
-      <div className="row justify-content-center">
-        <div className="col-12 col-lg-8 col-xl-6">
-          
-          <div className="text-center mb-5 mt-4">
-            <h1 className="display-5 fw-bold mb-5">Find Research in Your Area Easier. Faster. Smarter.</h1>
-            <p className="lead text-muted">Discover the latest research and connect with experts near you</p>
-          </div>
+    <div className="signup-container">
+      <div className="signup-background">
+        <div className="floating-circles">
+          <div className="circle circle-1"></div>
+          <div className="circle circle-2"></div>
+          <div className="circle circle-3"></div>
+        </div>
+      </div>
 
-          <div className="bg-white rounded shadow p-4">
-            <h3 className="mb-4 text-center">Sign Up</h3>
+      <div className="container-fluid p-4">
+        <div className="row justify-content-center align-items-center min-vh-100">
+          <div className="col-12 col-lg-10 col-xl-8">
             
-            {error && <div className="alert alert-danger">{error}</div>}
-
-            <form onSubmit={handleSubmit}>
-              <div className="mb-3">
-                <input
-                  onChange={handleChange}
-                  value={formData.name}
-                  type="text"
-                  className="form-control"
-                  name="name"
-                  placeholder="Enter your name"
-                  required
-                />
-              </div>
-
-              <div className="mb-3">
-                <input
-                  onChange={handleChange}
-                  value={formData.email}
-                  type="email"
-                  className="form-control"
-                  name="email"
-                  placeholder="Enter your email"
-                  required
-                />
-              </div>
-
-              <div className="mb-3">
-                <input
-                  onChange={handleChange}
-                  value={formData.password}
-                  type="password"
-                  className="form-control"
-                  name="password"
-                  placeholder="Create a password"
-                  required
-                />
-              </div>
-
-              <button type="submit" className="btn btn-dark w-100 py-2 mb-2" disabled={loading}>
-                {loading ? 'Signing up...' : 'Sign Up'}
-              </button>
-              
-              <button type="button" onClick={handleGoogleSignIn} className="btn btn-outline-dark w-100 py-2" disabled={loading}>
-                {loading ? 'Signing in...' : 'Sign Up with Google'}
-              </button>
-
-              <p className="text-center text-muted small mt-3 mb-0">
-                Already have an account? <a href="/login" className="text-dark">Log in</a>
+            <div className="text-center mb-5 header-content fade-in-up">
+              <h1 className="display-4 fw-bold mb-4 title-gradient">
+                Find Research in Your Area
+              </h1>
+              <p className="lead subtitle-text">
+                <span className="highlight-word">Easier.</span> 
+                <span className="highlight-word">Faster.</span> 
+                <span className="highlight-word">Smarter.</span>
               </p>
-            </form>
-          </div>
+              <p className="description-text">Discover the latest research and connect with experts near you</p>
+            </div>
 
+            <div className="signup-card fade-in-up-delay">
+              <div className="card-glow"></div>
+              <h3 className="mb-4 text-center card-title">Create Your Account</h3>
+              
+              {error && (
+                <div className="alert alert-custom alert-danger slide-down">
+                  <i className="fa-solid fa-circle-exclamation me-2"></i>
+                  {error}
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit}>
+                <div className="mb-4 input-wrapper">
+                  <i className="fa-solid fa-user input-icon"></i>
+                  <input
+                    onChange={handleChange}
+                    value={formData.name}
+                    type="text"
+                    className="form-control custom-input"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
+
+                <div className="mb-4 input-wrapper">
+                  <i className="fa-solid fa-envelope input-icon"></i>
+                  <input
+                    onChange={handleChange}
+                    value={formData.email}
+                    type="email"
+                    className="form-control custom-input"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
+
+                <div className="mb-4 input-wrapper">
+                  <i className="fa-solid fa-lock input-icon"></i>
+                  <input
+                    onChange={handleChange}
+                    value={formData.password}
+                    type="password"
+                    className="form-control custom-input"
+                    name="password"
+                    placeholder="Create a password"
+                    required
+                  />
+                </div>
+
+                <button 
+                  type="submit" 
+                  className="btn btn-custom-primary w-100 py-3 mb-3" 
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <>
+                      <span className="spinner-border spinner-border-sm me-2" role="status"></span>
+                      Creating account...
+                    </>
+                  ) : (
+                    <>
+                      <i className="fa-solid fa-user-plus me-2"></i>
+                      Sign Up
+                    </>
+                  )}
+                </button>
+
+                <div className="divider">
+                  <span>OR</span>
+                </div>
+                
+                <button 
+                  type="button" 
+                  onClick={handleGoogleSignIn} 
+                  className="btn btn-custom-google w-100 py-3" 
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <>
+                      <span className="spinner-border spinner-border-sm me-2" role="status"></span>
+                      Signing in...
+                    </>
+                  ) : (
+                    <>
+                      <i className="fa-brands fa-google me-2"></i>
+                      Sign Up with Google
+                    </>
+                  )}
+                </button>
+
+                <p className="text-center footer-text mt-4 mb-0">
+                  Already have an account? 
+                  <a href="/login" className="login-link"> Log in</a>
+                </p>
+              </form>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>

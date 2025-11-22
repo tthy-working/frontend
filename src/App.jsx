@@ -8,7 +8,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<SignUpPage />} />
+        <Route path="/login" element={<SignUpPage />} />
         <Route path="/homeUi" element={<HomePage />} />
         <Route path="/ai-assistant" element={<AIDashboard />} />
         <Route path="/interview" element={<InterviewPage />} />
