@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import FavoriteButton from './FavoriteButton';
+import './DataDisplay.css';
 
 export default function DataDisplay({ searchQuery = '' }) {
     const [data, setData] = useState([]);
@@ -95,7 +96,7 @@ export default function DataDisplay({ searchQuery = '' }) {
 
     return (
         <div className="container-fluid p-3">
-            <h4 className="mb-4">Professor Research Directory</h4>
+            <h4 className="mb-4"><strong>Professor Research Directory</strong></h4>
 
             {filteredData.length === 0 ? (
                 <div className="alert alert-info">
@@ -113,7 +114,7 @@ export default function DataDisplay({ searchQuery = '' }) {
                     {filteredData.map((school, schoolIdx) => (
                         <div key={schoolIdx} className="mb-5">
                             <h5 className="text-primary mb-3">
-                                <i className="bi bi-building"></i> {school.school_name}
+                                <i className="bi bi-building"></i><strong>{school.school_name}</strong>
                             </h5>
 
                             {school.departments?.map((dept, deptIdx) => {
@@ -141,7 +142,7 @@ export default function DataDisplay({ searchQuery = '' }) {
                                                     <div className="card-body">
                                                         <div className="d-flex justify-content-between align-items-start mb-3">
                                                             <h5 className="card-title mb-0">
-                                                                <i className="bi bi-person-circle"></i> {prof.name}
+                                                                <i className="bi bi-person-circle"></i><strong>{prof.name}</strong>
                                                             </h5>
                                                             <FavoriteButton
                                                                 professor={professorObj}
@@ -152,17 +153,17 @@ export default function DataDisplay({ searchQuery = '' }) {
 
                                                         <div className="mb-3">
                                                             {prof.email && (
-                                                                <a href={`mailto:${prof.email}`} className="btn btn-sm btn-outline-primary me-2 mb-2">
+                                                                <a href={`mailto:${prof.email}`} className="btn btn-sm gradient-border-btn me-2 mb-2">
                                                                     <i className="bi bi-envelope"></i> Email
                                                                 </a>
                                                             )}
                                                             {prof.linkedin && (
-                                                                <a href={prof.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline-primary me-2 mb-2">
+                                                                <a href={prof.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-sm gradient-border-btn me-2 mb-2">
                                                                     <i className="bi bi-linkedin"></i> LinkedIn
                                                                 </a>
                                                             )}
                                                             {prof.google_scholar && (
-                                                                <a href={prof.google_scholar} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline-primary me-2 mb-2">
+                                                                <a href={prof.google_scholar} target="_blank" rel="noopener noreferrer" className="btn btn-sm gradient-border-btn me-2 mb-2">
                                                                     <i className="bi bi-mortarboard"></i> Google Scholar
                                                                 </a>
                                                             )}
@@ -181,7 +182,7 @@ export default function DataDisplay({ searchQuery = '' }) {
                                                                                     {work.paper_title_year || 'Research Paper'}
                                                                                 </a>
                                                                             ) : (
-                                                                                <strong>{work.paper_title_year || 'Research Paper'}</strong>
+                                                                                <strong style={{ color: '#3c6aa9' }}>{work.paper_title_year || 'Research Paper'}</strong>
                                                                             )}
                                                                         </div>
                                                                         {work.summary && (

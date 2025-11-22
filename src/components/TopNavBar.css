@@ -1,0 +1,42 @@
+.gradient-top-navbar {
+    background: linear-gradient(
+        90deg,
+        #f4f1eb,
+        #c75d60,
+        #c31d1d,
+        #867caf,
+        #3c6aa9,
+        #f4f1eb
+    );
+    background-size: 300% 100%;
+    animation: gradientMove 15s linear infinite;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Continuous moving gradient */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0% 0;
+    }
+}
+
+/* Navbar links and buttons styling */
+.gradient-top-navbar .nav-link,
+.gradient-top-navbar .navbar-brand,
+.gradient-top-navbar button {
+    color: white !important;
+    background: transparent;
+    border: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.gradient-top-navbar button:hover {
+    color: #f4f1eb;
+}

@@ -1,0 +1,70 @@
+.gradient-border-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100vh;
+    background-color: #ffffff; /* Sidebar white */
+    display: flex;
+    flex-direction: column;
+    border-right: 5px solid; /* gradient border */
+    border-image-slice: 1;
+    border-image-source: linear-gradient(
+        180deg,
+        #f4f1eb,
+        #c75d60,
+        #c31d1d,
+        #867caf,
+        #3c6aa9,
+        #f4f1eb
+    );
+    animation: gradientBorderMove 5s linear infinite;
+    padding: 0.5rem;
+}
+
+@keyframes gradientBorderMove {
+    0% {
+        border-image-source: linear-gradient(
+            180deg,
+            #f4f1eb,
+            #c75d60,
+            #c31d1d,
+            #867caf,
+            #3c6aa9,
+            #f4f1eb
+        );
+    }
+    50% {
+        border-image-source: linear-gradient(
+            180deg,
+            #3c6aa9,
+            #867caf,
+            #c31d1d,
+            #c75d60,
+            #f4f1eb,
+            #3c6aa9
+        );
+    }
+    100% {
+        border-image-source: linear-gradient(
+            180deg,
+            #f4f1eb,
+            #c75d60,
+            #c31d1d,
+            #867caf,
+            #3c6aa9,
+            #f4f1eb
+        );
+    }
+}
+
+/* Buttons inside sidebar */
+.gradient-border-sidebar .btn {
+    background: transparent;
+    border: none;
+    width: 100%;
+    padding: 1rem 0;
+    transition: background 0.3s;
+}
+
+/* Active but*

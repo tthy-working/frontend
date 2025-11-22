@@ -1,5 +1,6 @@
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase/config.js';
+import './TopNavBar.css';
 
 export default function TopNavBar() {
 
@@ -17,7 +18,7 @@ const handleLogout = async () => {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary position-fixed top-0" style={{left: '80px', right: 0, zIndex: 999}}>
+            <nav className="navbar navbar-expand-lg gradient-top-navbar position-fixed top-0" style={{left: '80px', right: 0, zIndex: 999}}>
       <div className="container-fluid">
         <a className="navbar-brand" href="#"></a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
