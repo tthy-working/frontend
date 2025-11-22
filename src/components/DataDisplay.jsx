@@ -8,7 +8,7 @@ export default function DataDisplay() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://uvddanzqgxbmjzwgstau.supabase.co/storage/v1/object/public/json-files_1/tableConvert.com_wmk744.json');
+                const response = await fetch('https://uvddanzqgxbmjzwgstau.supabase.co/storage/v1/object/public/json-files_1/professors_no_college_grouped.json');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
