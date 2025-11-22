@@ -5,6 +5,7 @@ import './sideBar.css';
 export default function SideBar() {
   const [activeIcon, setActiveIcon] = useState('home');
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
 
   // Update time every second
@@ -26,6 +27,7 @@ export default function SideBar() {
 
   const handleIconClick = (iconName, path) => {
     setActiveIcon(iconName);
+    setIsSidebarOpen(false); // Close sidebar on mobile after clicking
     console.log(`${iconName} clicked`);
     if (path) {
       navigate(path);
@@ -33,31 +35,58 @@ export default function SideBar() {
   };
 
   const handleLogout = () => {
-    // Add your logout logic here
+    setIsSidebarOpen(false);
     navigate('/login');
+  };
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
   return (
     <>
       {/* Top Info Bar */}
       <div className="top-info-bar">
-        <div className="info-bar-item">
-          <i className="fa-solid fa-clock"></i>
-          <span className="info-text">
-            <strong>UTC:</strong> {formatDateTime(currentTime)}
-          </span>
-        </div>
-        <div className="info-bar-divider"></div>
-        <div className="info-bar-item">
-          <i className="fa-solid fa-user"></i>
-          <span className="info-text">
-            <strong>User:</strong> anfebladii
-          </span>
+        {/* Hamburger Menu Button - Only visible on mobile */}
+        <button 
+          className="hamburger-btn d-lg-none"
+          onClick={toggleSidebar}
+          aria-label="Toggle navigation"
+        >
+          <i className={`fa-solid ${isSidebarOpen ? 'fa-times' : 'fa-bars'}`}></i>
+        </button>
+
+        {/* Info Items */}
+        <div className="d-flex align-items-center gap-3 flex-wrap justify-content-center flex-grow-1">
+          <div className="info-bar-item">
+            <i className="fa-solid fa-clock"></i>
+            <span className="info-text d-none d-md-inline">
+              <strong>UTC:</strong> {formatDateTime(currentTime)}
+            </span>
+            <span className="info-text d-md-none">
+              <strong>{formatDateTime(currentTime).split(' ')[1]}</strong>
+            </span>
+          </div>
+          <div className="info-bar-divider d-none d-md-block"></div>
+          <div className="info-bar-item">
+            <i className="fa-solid fa-user"></i>
+            <span className="info-text">
+              <strong className="d-none d-md-inline">User:</strong> anfebladii
+            </span>
+          </div>
         </div>
       </div>
 
+      {/* Overlay for mobile */}
+      {isSidebarOpen && (
+        <div 
+          className="sidebar-overlay d-lg-none" 
+          onClick={() => setIsSidebarOpen(false)}
+        ></div>
+      )}
+
       {/* Sidebar */}
-      <div className="modern-sidebar">
+      <div className={`modern-sidebar ${isSidebarOpen ? 'sidebar-open' : ''}`}>
         {/* Logo Section */}
         <div className="sidebar-logo">
           <div className="logo-icon">

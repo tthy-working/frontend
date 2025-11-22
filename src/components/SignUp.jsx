@@ -90,7 +90,7 @@ export default function SignUp(){
 
               <form onSubmit={handleSubmit}>
                 <div className="mb-4 input-wrapper">
-                  <i className="fa-solid fa-user input-icon"></i>
+                  
                   <input
                     onChange={handleChange}
                     value={formData.name}
@@ -103,7 +103,7 @@ export default function SignUp(){
                 </div>
 
                 <div className="mb-4 input-wrapper">
-                  <i className="fa-solid fa-envelope input-icon"></i>
+                  
                   <input
                     onChange={handleChange}
                     value={formData.email}
@@ -116,7 +116,7 @@ export default function SignUp(){
                 </div>
 
                 <div className="mb-4 input-wrapper">
-                  <i className="fa-solid fa-lock input-icon"></i>
+                  
                   <input
                     onChange={handleChange}
                     value={formData.password}
