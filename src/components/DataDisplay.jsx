@@ -8,13 +8,13 @@ export default function DataDisplay({ searchQuery = '' }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://uvddanzqgxbmjzwgstau.supabase.co/storage/v1/object/public/json-files_1/professors_no_college_grouped.json');
+                const response = await fetch('https://uvddanzqgxbmjzwgstau.supabase.co/storage/v1/object/public/new_datatest/professors_hierarchical.json');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 const jsonData = await response.json();
                 console.log('Fetched data:', jsonData);
-                setData(jsonData.student || []);
+                setData(jsonData.students || []);
             } catch (err) {
                 console.error('Fetch error:', err);
                 setError(err.message);
@@ -37,9 +37,9 @@ export default function DataDisplay({ searchQuery = '' }) {
                 const query = searchQuery.toLowerCase();
                 const profName = prof.name?.toLowerCase() || '';
                 const profEmail = prof.email?.toLowerCase() || '';
-                const deptName = dept.department?.toLowerCase() || '';
-                const schoolName = school.school?.toLowerCase() || '';
-                const researchText = prof.recent_work?.join(' ').toLowerCase() || '';
+                const deptName = dept.department_name?.toLowerCase() || '';
+                const schoolName = school.school_name?.toLowerCase() || '';
+                const researchText = prof.recent_work?.map(w => (w.paper_title_year || '') + ' ' + (w.summary || '')).join(' ').toLowerCase() || '';
 
                 return profName.includes(query) ||
                     profEmail.includes(query) ||
@@ -76,13 +76,13 @@ export default function DataDisplay({ searchQuery = '' }) {
                     {filteredData.map((school, schoolIdx) => (
                         <div key={schoolIdx} className="mb-5">
                             <h5 className="text-primary mb-3">
-                                <i className="bi bi-building"></i> {school.school}
+                                <i className="bi bi-building"></i> {school.school_name}
                             </h5>
 
                             {school.departments?.map((dept, deptIdx) => (
                                 <div key={deptIdx} className="ms-3 mb-4">
                                     <h6 className="text-secondary mb-3">
-                                        <i className="bi bi-folder"></i> {dept.department}
+                                        <i className="bi bi-folder"></i> {dept.department_name}
                                     </h6>
 
                                     {dept.professors?.map((prof, profIdx) => (
@@ -115,42 +115,24 @@ export default function DataDisplay({ searchQuery = '' }) {
                                                         <h6 className="text-muted mb-2">
                                                             <i className="bi bi-file-text"></i> Recent Research:
                                                         </h6>
-                                                        {prof.recent_work.map((work, workIdx) => {
-                                                            // Extract title and year from the work string
-                                                            // Format: "Title YYYY: Summary text"
-                                                            const colonIndex = work.indexOf(':');
-                                                            let title = 'Research Paper';
-                                                            let year = '';
-                                                            let summary = work;
-
-                                                            if (colonIndex > 0) {
-                                                                const titlePart = work.substring(0, colonIndex).trim();
-                                                                summary = work.substring(colonIndex + 1).trim();
-
-                                                                // Extract year from title (last 4 digits)
-                                                                const yearMatch = titlePart.match(/(\d{4})\s*$/);
-                                                                if (yearMatch) {
-                                                                    year = yearMatch[1];
-                                                                    title = titlePart.substring(0, titlePart.length - 5).trim();
-                                                                } else {
-                                                                    title = titlePart;
-                                                                }
-                                                            }
-
-                                                            return (
-                                                                <div key={workIdx} className="mb-3 p-3 bg-light rounded border">
-                                                                    <div className="mb-2">
-                                                                        <strong>{title}</strong>
-                                                                        {year && <span className="badge bg-secondary ms-2">{year}</span>}
-                                                                    </div>
-                                                                    {summary && (
-                                                                        <p className="mb-0 text-muted small">
-                                                                            {summary}
-                                                                        </p>
+                                                        {prof.recent_work.map((work, workIdx) => (
+                                                            <div key={workIdx} className="mb-3 p-3 bg-light rounded border">
+                                                                <div className="mb-2">
+                                                                    {work.paper_link ? (
+                                                                        <a href={work.paper_link} target="_blank" rel="noopener noreferrer" className="fw-bold text-decoration-none">
+                                                                            {work.paper_title_year || 'Research Paper'}
+                                                                        </a>
+                                                                    ) : (
+                                                                        <strong>{work.paper_title_year || 'Research Paper'}</strong>
                                                                     )}
                                                                 </div>
-                                                            );
-                                                        })}
+                                                                {work.summary && (
+                                                                    <p className="mb-0 text-muted small">
+                                                                        {work.summary}
+                                                                    </p>
+                                                                )}
+                                                            </div>
+                                                        ))}
                                                     </div>
                                                 )}
                                             </div>

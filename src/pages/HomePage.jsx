@@ -4,14 +4,13 @@ import TopNavBar from "../components/TopNavBar.jsx";
 
 
 export default function HomePage() {
-  
+
 
   return (
     <>
-     <SideBar/>
-     < TopNavBar />
-     < HomeUi />
+      <SideBar />
+      < TopNavBar />
+      < HomeUi />
     </>
   )
 }
-
