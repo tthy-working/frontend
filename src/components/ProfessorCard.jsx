@@ -47,18 +47,23 @@ export default function ProfessorCard({ professor, favorites, setFavorites }) {
 
                 <div className="mb-3">
                     {professor.email && (
-                        <a href={`mailto:${professor.email}`} className="btn btn-sm btn-outline-primary me-1 mb-1">
-                            <i className="bi bi-envelope"></i>
+                        <a href={`mailto:${professor.email}`} className="btn btn-sm btn-outline-primary me-2 mb-2">
+                            <i className="bi bi-envelope me-1"></i> Email
                         </a>
                     )}
                     {professor.linkedin && (
-                        <a href={professor.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline-primary me-1 mb-1">
-                            <i className="bi bi-linkedin"></i>
+                        <a href={professor.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline-primary me-2 mb-2">
+                            <i className="bi bi-linkedin me-1"></i> LinkedIn
                         </a>
                     )}
                     {professor.google_scholar && (
-                        <a href={professor.google_scholar} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline-primary me-1 mb-1">
-                            <i className="bi bi-mortarboard"></i>
+                        <a href={professor.google_scholar} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline-primary me-2 mb-2">
+                            <i className="bi bi-mortarboard me-1"></i> Scholar
+                        </a>
+                    )}
+                    {professor.website && (
+                        <a href={professor.website} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline-primary me-2 mb-2">
+                            <i className="bi bi-globe me-1"></i> Website
                         </a>
                     )}
                 </div>

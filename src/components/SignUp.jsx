@@ -3,7 +3,7 @@ import { auth, googleProvider } from '../firebase/config.js';
 import { useState } from "react";
 import './SignUp.css';
 
-export default function SignUp(){
+export default function SignUp() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -64,14 +64,14 @@ export default function SignUp(){
       <div className="container-fluid p-4">
         <div className="row justify-content-center align-items-center min-vh-100">
           <div className="col-12 col-lg-10 col-xl-8">
-            
+
             <div className="text-center mb-5 header-content fade-in-up">
               <h1 className="display-4 fw-bold mb-4 title-gradient">
                 Find Research in Your Area
               </h1>
               <p className="lead subtitle-text">
-                <span className="highlight-word">Easier.</span> 
-                <span className="highlight-word">Faster.</span> 
+                <span className="highlight-word">Easier.</span>
+                <span className="highlight-word">Faster.</span>
                 <span className="highlight-word">Smarter.</span>
               </p>
               <p className="description-text">Discover the latest research and connect with experts near you</p>
@@ -80,7 +80,7 @@ export default function SignUp(){
             <div className="signup-card fade-in-up-delay">
               <div className="card-glow"></div>
               <h3 className="mb-4 text-center card-title">Create Your Account</h3>
-              
+
               {error && (
                 <div className="alert alert-custom alert-danger slide-down">
                   <i className="fa-solid fa-circle-exclamation me-2"></i>
@@ -90,7 +90,7 @@ export default function SignUp(){
 
               <form onSubmit={handleSubmit}>
                 <div className="mb-4 input-wrapper">
-                  
+
                   <input
                     onChange={handleChange}
                     value={formData.name}
@@ -103,7 +103,7 @@ export default function SignUp(){
                 </div>
 
                 <div className="mb-4 input-wrapper">
-                  
+
                   <input
                     onChange={handleChange}
                     value={formData.email}
@@ -116,7 +116,7 @@ export default function SignUp(){
                 </div>
 
                 <div className="mb-4 input-wrapper">
-                  
+
                   <input
                     onChange={handleChange}
                     value={formData.password}
@@ -128,9 +128,9 @@ export default function SignUp(){
                   />
                 </div>
 
-                <button 
-                  type="submit" 
-                  className="btn btn-custom-primary w-100 py-3 mb-3" 
+                <button
+                  type="submit"
+                  className="btn btn-custom-primary w-100 py-3 mb-3"
                   disabled={loading}
                 >
                   {loading ? (
@@ -149,11 +149,11 @@ export default function SignUp(){
                 <div className="divider">
                   <span>OR</span>
                 </div>
-                
-                <button 
-                  type="button" 
-                  onClick={handleGoogleSignIn} 
-                  className="btn btn-custom-google w-100 py-3" 
+
+                <button
+                  type="button"
+                  onClick={handleGoogleSignIn}
+                  className="btn btn-custom-google w-100 py-3"
                   disabled={loading}
                 >
                   {loading ? (
@@ -170,7 +170,7 @@ export default function SignUp(){
                 </button>
 
                 <p className="text-center footer-text mt-4 mb-0">
-                  Already have an account? 
+                  Already have an account?
                   <a href="/login" className="login-link"> Log in</a>
                 </p>
               </form>

@@ -134,6 +134,7 @@ export default function DataDisplay({ searchQuery = '' }) {
                                                 school: school.school_name,
                                                 linkedin: prof.linkedin,
                                                 google_scholar: prof.google_scholar,
+                                                website: prof.website,
                                                 recent_work: prof.recent_work
                                             };
 

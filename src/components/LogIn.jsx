@@ -63,14 +63,14 @@ export default function LogIn() {
         <div className="container-fluid p-4">
           <div className="row justify-content-center align-items-center min-vh-100">
             <div className="col-12 col-lg-10 col-xl-8">
-              
+
               <div className="text-center mb-5 header-content fade-in-up">
                 <h1 className="display-4 fw-bold mb-4 title-gradient">
                   Welcome Back
                 </h1>
                 <p className="lead subtitle-text">
-                  <span className="highlight-word">Continue.</span> 
-                  <span className="highlight-word">Your.</span> 
+                  <span className="highlight-word">Continue.</span>
+                  <span className="highlight-word">Your.</span>
                   <span className="highlight-word">Research.</span>
                 </p>
                 <p className="description-text">Log in to access your research dashboard</p>
@@ -79,7 +79,7 @@ export default function LogIn() {
               <div className="signup-card fade-in-up-delay">
                 <div className="card-glow"></div>
                 <h3 className="mb-4 text-center card-title">Log In to Your Account</h3>
-                
+
                 {error && (
                   <div className="alert alert-custom alert-danger slide-down">
                     <i className="fa-solid fa-circle-exclamation me-2"></i>
@@ -120,9 +120,9 @@ export default function LogIn() {
                     </a>
                   </div>
 
-                  <button 
-                    type="submit" 
-                    className="btn btn-custom-primary w-100 py-3 mb-3" 
+                  <button
+                    type="submit"
+                    className="btn btn-custom-primary w-100 py-3 mb-3"
                     disabled={loading}
                   >
                     {loading ? (
@@ -141,11 +141,11 @@ export default function LogIn() {
                   <div className="divider">
                     <span>OR</span>
                   </div>
-                  
-                  <button 
-                    type="button" 
-                    onClick={handleGoogleSignIn} 
-                    className="btn btn-custom-google w-100 py-3" 
+
+                  <button
+                    type="button"
+                    onClick={handleGoogleSignIn}
+                    className="btn btn-custom-google w-100 py-3"
                     disabled={loading}
                   >
                     {loading ? (
@@ -162,15 +162,15 @@ export default function LogIn() {
                   </button>
 
                   <p className="text-center footer-text mt-4 mb-0">
-                    Don't have an account? 
-                    <a 
-                      href="/signup" 
+                    Don't have an account?
+                    <a
+                      href="/signup"
                       className="login-link"
-                      style={{ 
-                        position: 'relative', 
-                        zIndex: 10, 
+                      style={{
+                        position: 'relative',
+                        zIndex: 10,
                         cursor: 'pointer',
-                        pointerEvents: 'auto' 
+                        pointerEvents: 'auto'
                       }}
                     >
                       {' '}Sign up

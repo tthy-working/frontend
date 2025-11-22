@@ -18,25 +18,25 @@ const EmailTemplateCard = ({ title, body }) => {
     };
 
     return (
-        <div className="card h-100 shadow-sm border-0" style={{ background: 'rgba(255, 255, 255, 0.05)', backdropFilter: 'blur(10px)' }}>
+        <div className="card shadow-sm h-100">
             <div className="card-body d-flex flex-column">
-                <h5 className="card-title text-primary mb-3">
-                    <i className="bi bi-envelope-paper me-2"></i>{title}
-                </h5>
-                <div className="card-text flex-grow-1 mb-4 text-muted custom-scrollbar" style={{
+                <h6 className="card-title mb-3">
+                    <i className="bi bi-envelope-paper"></i> {title}
+                </h6>
+                <div className="card-text flex-grow-1 mb-3 p-3 bg-light rounded border custom-scrollbar" style={{
                     whiteSpace: 'pre-wrap',
-                    fontSize: '0.9rem',
-                    maxHeight: '200px',
+                    fontSize: '0.85rem',
+                    maxHeight: '250px',
                     overflowY: 'auto',
-                    paddingRight: '5px'
+                    fontFamily: 'monospace'
                 }}>
                     {body}
                 </div>
                 <a
                     href={getMailtoLink()}
-                    className="btn btn-primary w-100 mt-auto"
+                    className="btn btn-outline-primary w-100 mt-auto"
                 >
-                    <i className="bi bi-send me-2"></i>Use Template
+                    <i className="bi bi-send"></i> Use Template
                 </a>
             </div>
         </div>
