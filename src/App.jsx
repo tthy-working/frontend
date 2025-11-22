@@ -7,6 +7,7 @@ import InterviewPage from "./pages/InterviewPage.jsx";
 import LogInPage from "./pages/LogInPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import FavoritesPage from "./pages/FavoritesPage.jsx";
+import EmailTemplatesPage from './pages/EmailTemplatesPage';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/ai-assistant" element={<AIDashboard />} />
         <Route path="/interview" element={<InterviewPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/email-templates" element={<EmailTemplatesPage />} />
         <Route path="/*" element={<NotFoundPage />} />
       </Routes>
     </Router>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './sideBar.css'; 
+import './sideBar.css';
 
 export default function SideBar() {
   const [activeIcon, setActiveIcon] = useState('home');
@@ -20,7 +20,7 @@ export default function SideBar() {
     const hours = String(date.getUTCHours()).padStart(2, '0');
     const minutes = String(date.getUTCMinutes()).padStart(2, '0');
     const seconds = String(date.getUTCSeconds()).padStart(2, '0');
-    
+
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
   };
 
@@ -102,6 +102,15 @@ export default function SideBar() {
           >
             <i className="fa-solid fa-star"></i>
             <span className="btn-text">Favorites</span>
+          </button>
+
+          <button
+            className={`sidebar-btn ${activeIcon === 'email-templates' ? 'active' : ''}`}
+            onClick={() => handleIconClick('email-templates', '/email-templates')}
+            title="Email Templates"
+          >
+            <i className="fa-solid fa-envelope"></i>
+            <span className="btn-text">Templates</span>
           </button>
 
           <button
