@@ -13,7 +13,11 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<SignUpPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/login" element={<LogInPage />} />
+        <Route path="/LogIn" element={<LogInPage />} />
+        <Route path="/homeUi" element={<HomePage />} />
         <Route path="/ai-assistant" element={<AIDashboard />} />
         <Route path="/interview" element={<InterviewPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />

@@ -147,7 +147,23 @@ export default function SideBar() {
             <span className="btn-text">Templates</span>
           </button>
 
-          
+          <button
+            className={`sidebar-btn ${activeIcon === 'dashboard' ? 'active' : ''}`}
+            onClick={() => handleIconClick('dashboard', '/dashboard')}
+            title="Dashboard"
+          >
+            <i className="fa-brands fa-slack"></i>
+            <span className="btn-text">Dashboard</span>
+          </button>
+
+          <button
+            className={`sidebar-btn ${activeIcon === 'profile' ? 'active' : ''}`}
+            onClick={() => handleIconClick('profile', '/profile')}
+            title="Profile"
+          >
+            <i className="fa-solid fa-list"></i>
+            <span className="btn-text">Profile</span>
+          </button>
         </nav>
 
         {/* Logout at Bottom */}
