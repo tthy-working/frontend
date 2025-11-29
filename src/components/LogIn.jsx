@@ -1,7 +1,7 @@
 import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { auth, googleProvider } from '../firebase/config.js';
 import { useState } from "react";
-import './SignUp.css'; // Reuse the same CSS
+import './LogIn.css';
 
 export default function LogIn() {
   const [formData, setFormData] = useState({
@@ -50,139 +50,122 @@ export default function LogIn() {
   };
 
   return (
-    <>
-      <div className="signup-container">
-        <div className="signup-background">
-          <div className="floating-circles">
-            <div className="circle circle-1"></div>
-            <div className="circle circle-2"></div>
-            <div className="circle circle-3"></div>
+    <div className="login-container">
+      {/* Left Side - Branding */}
+      <div className="login-branding">
+        <div className="branding-shape shape-1"></div>
+        <div className="branding-shape shape-2"></div>
+
+        <div className="branding-content animate-fade-in">
+          <div className="brand-logo">
+            <i className="bi bi-mortarboard-fill me-3"></i>
+            AcadFinder
           </div>
-        </div>
-
-        <div className="container-fluid p-4">
-          <div className="row justify-content-center align-items-center min-vh-100">
-            <div className="col-12 col-lg-10 col-xl-8">
-
-              <div className="text-center mb-5 header-content fade-in-up">
-                <h1 className="display-4 fw-bold mb-4 title-gradient">
-                  Welcome Back
-                </h1>
-                <p className="lead subtitle-text">
-                  <span className="highlight-word">Continue.</span>
-                  <span className="highlight-word">Your.</span>
-                  <span className="highlight-word">Research.</span>
-                </p>
-                <p className="description-text">Log in to access your research dashboard</p>
-              </div>
-
-              <div className="signup-card fade-in-up-delay">
-                <div className="card-glow"></div>
-                <h3 className="mb-4 text-center card-title">Log In to Your Account</h3>
-
-                {error && (
-                  <div className="alert alert-custom alert-danger slide-down">
-                    <i className="fa-solid fa-circle-exclamation me-2"></i>
-                    {error}
-                  </div>
-                )}
-
-                <form onSubmit={handleSubmit}>
-                  <div className="mb-4 input-wrapper">
-                    <i className="fa-solid fa-envelope input-icon"></i>
-                    <input
-                      onChange={handleChange}
-                      value={formData.email}
-                      type="email"
-                      className="form-control custom-input"
-                      name="email"
-                      placeholder="Enter your email"
-                      required
-                    />
-                  </div>
-
-                  <div className="mb-4 input-wrapper">
-                    <i className="fa-solid fa-lock input-icon"></i>
-                    <input
-                      onChange={handleChange}
-                      value={formData.password}
-                      type="password"
-                      className="form-control custom-input"
-                      name="password"
-                      placeholder="Enter your password"
-                      required
-                    />
-                  </div>
-
-                  <div className="text-end mb-3">
-                    <a href="/forgot-password" className="forgot-link">
-                      Forgot password?
-                    </a>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="btn btn-custom-primary w-100 py-3 mb-3"
-                    disabled={loading}
-                  >
-                    {loading ? (
-                      <>
-                        <span className="spinner-border spinner-border-sm me-2" role="status"></span>
-                        Logging in...
-                      </>
-                    ) : (
-                      <>
-                        <i className="fa-solid fa-right-to-bracket me-2"></i>
-                        Log In
-                      </>
-                    )}
-                  </button>
-
-                  <div className="divider">
-                    <span>OR</span>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={handleGoogleSignIn}
-                    className="btn btn-custom-google w-100 py-3"
-                    disabled={loading}
-                  >
-                    {loading ? (
-                      <>
-                        <span className="spinner-border spinner-border-sm me-2" role="status"></span>
-                        Signing in...
-                      </>
-                    ) : (
-                      <>
-                        <i className="fa-brands fa-google me-2"></i>
-                        Log In with Google
-                      </>
-                    )}
-                  </button>
-
-                  <p className="text-center footer-text mt-4 mb-0">
-                    Don't have an account?
-                    <a
-                      href="/signup"
-                      className="login-link"
-                      style={{
-                        position: 'relative',
-                        zIndex: 10,
-                        cursor: 'pointer',
-                        pointerEvents: 'auto'
-                      }}
-                    >
-                      {' '}Sign up
-                    </a>
-                  </p>
-                </form>
-              </div>
-
-            </div>
-          </div>
+          <h1 className="brand-title">
+            Research.<br />
+            Simplified.
+          </h1>
+          <p className="brand-subtitle">
+            Connect with professors, discover opportunities, and accelerate your academic journey with our AI-powered platform.
+          </p>
         </div>
       </div>
-    </>
+
+      {/* Right Side - Login Form */}
+      <div className="login-form-container">
+        <div className="login-form-wrapper animate-fade-in">
+          <div className="form-header">
+            <h2 className="form-title">Welcome Back</h2>
+            <p className="form-subtitle">Please enter your details to sign in</p>
+          </div>
+
+          {error && (
+            <div className="alert alert-danger mb-4" role="alert">
+              <i className="bi bi-exclamation-circle me-2"></i>
+              {error}
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label className="form-label">Email Address</label>
+              <div className="form-input-group">
+                <input
+                  onChange={handleChange}
+                  value={formData.email}
+                  type="email"
+                  className="form-input"
+                  name="email"
+                  placeholder="name@example.com"
+                  required
+                />
+                <i className="bi bi-envelope form-input-icon"></i>
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label className="form-label">Password</label>
+              <div className="form-input-group">
+                <input
+                  onChange={handleChange}
+                  value={formData.password}
+                  type="password"
+                  className="form-input"
+                  name="password"
+                  placeholder="••••••••"
+                  required
+                />
+                <i className="bi bi-lock form-input-icon"></i>
+              </div>
+            </div>
+
+            <div className="forgot-password">
+              <a href="/forgot-password" className="link-text">Forgot password?</a>
+            </div>
+
+            <button
+              type="submit"
+              className="btn-login"
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <span className="spinner-border spinner-border-sm me-2" role="status"></span>
+                  Signing in...
+                </>
+              ) : (
+                <>
+                  Sign In
+                  <i className="bi bi-arrow-right ms-2"></i>
+                </>
+              )}
+            </button>
+
+            <div className="divider-text">
+              <span>OR CONTINUE WITH</span>
+            </div>
+
+            <button
+              type="button"
+              onClick={handleGoogleSignIn}
+              className="btn-google"
+              disabled={loading}
+            >
+              {loading ? (
+                <span className="spinner-border spinner-border-sm me-2" role="status"></span>
+              ) : (
+                <i className="bi bi-google"></i>
+              )}
+              Google
+            </button>
+
+            <p className="signup-prompt">
+              Don't have an account?{' '}
+              <a href="/signup" className="link-text">Sign up for free</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }

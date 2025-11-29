@@ -48,13 +48,18 @@ export default function SideBar() {
       {/* Top Info Bar */}
       <div className="top-info-bar">
         {/* Hamburger Menu Button - Only visible on mobile */}
-        <button 
+        <button
           className="hamburger-btn d-lg-none"
           onClick={toggleSidebar}
           aria-label="Toggle navigation"
         >
           <i className={`fa-solid ${isSidebarOpen ? 'fa-times' : 'fa-bars'}`}></i>
         </button>
+
+        {/* Brand - Visible on all screens */}
+        <div className="d-flex align-items-center gap-2">
+          <span className="fw-bold text-dark">AcadFinder</span>
+        </div>
 
         {/* Info Items */}
         <div className="d-flex align-items-center gap-3 flex-wrap justify-content-center flex-grow-1">
@@ -79,8 +84,8 @@ export default function SideBar() {
 
       {/* Overlay for mobile */}
       {isSidebarOpen && (
-        <div 
-          className="sidebar-overlay d-lg-none" 
+        <div
+          className="sidebar-overlay d-lg-none"
           onClick={() => setIsSidebarOpen(false)}
         ></div>
       )}

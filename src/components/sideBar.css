@@ -6,17 +6,15 @@
     right: 0;
     height: 60px;
 
-    
-    background: linear-gradient(
-        90deg,
-        #3c6aa9,
-        #867caf,
-       
-        #c75d60,
-        #c31d1d,
-        #f4f1eb
-    );
-   ;
+
+    background: linear-gradient(90deg,
+            #3c6aa9,
+            #867caf,
+
+            #c75d60,
+            #c31d1d,
+            #f4f1eb);
+    ;
 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     display: flex;
@@ -164,15 +162,16 @@
 }
 
 .sidebar-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
     transform: translateX(5px);
 }
 
 .sidebar-btn.active {
-    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, #3c6aa9 0%, #2a5186 100%);
     color: #ffffff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(42, 82, 152, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .sidebar-btn.active::after {
@@ -231,10 +230,21 @@
     }
 
     .modern-sidebar {
-        width: 80px;
-        padding: 1rem 0.5rem;
-        top: 100px;
-        height: calc(100vh - 100px);
+        width: 240px;
+        /* Full width on mobile when open */
+        padding: 1.5rem 1rem;
+        top: 135px;
+        /* Account for taller top bar on mobile */
+        height: calc(100vh - 120px);
+        transform: translateX(-100%);
+        /* Hidden by default */
+        z-index: 1001;
+        /* Above overlay */
+    }
+
+    .modern-sidebar.sidebar-open {
+        transform: translateX(0);
+        /* Slide in */
     }
 
     .sidebar-logo {
@@ -280,4 +290,29 @@
     .logo-text {
         display: none;
     }
+}
+
+/* Hamburger Button Styling */
+.hamburger-btn {
+    background: linear-gradient(135deg, #3c6aa9 0%, #2a5186 100%);
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(42, 82, 152, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(42, 82, 152, 0.3);
+    background: linear-gradient(135deg, #2a5186 0%, #3c6aa9 100%);
+}
+
+.hamburger-btn:active {
+    transform: translateY(0);
 }
