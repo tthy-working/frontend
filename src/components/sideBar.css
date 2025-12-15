@@ -1,4 +1,4 @@
-/* Top Info Bar */
+
 .top-info-bar {
     position: fixed;
     top: 0;
@@ -56,7 +56,7 @@
     background: linear-gradient(180deg, transparent, #867caf, transparent);
 }
 
-/* Modern Sidebar */
+
 .modern-sidebar {
     position: fixed;
     top: 60px;
@@ -73,7 +73,7 @@
     transition: all 0.3s ease;
 }
 
-/* Custom Scrollbar */
+
 .modern-sidebar::-webkit-scrollbar {
     width: 6px;
 }
@@ -87,7 +87,7 @@
     border-radius: 10px;
 }
 
-/* Logo Section */
+
 .sidebar-logo {
     display: flex;
     align-items: center;
@@ -119,7 +119,7 @@
     letter-spacing: 0.5px;
 }
 
-/* Navigation */
+
 .sidebar-nav {
     display: flex;
     flex-direction: column;
@@ -127,7 +127,6 @@
     flex: 1;
 }
 
-/* Sidebar Buttons */
 .sidebar-btn {
     display: flex;
     align-items: center;
@@ -196,7 +195,6 @@
     white-space: nowrap;
 }
 
-/* Logout Button */
 .sidebar-footer {
     margin-top: auto;
     padding-top: 1rem;
@@ -214,7 +212,7 @@
     box-shadow: 0 4px 15px rgba(195, 29, 29, 0.3);
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .top-info-bar {
         flex-direction: column;
@@ -231,20 +229,17 @@
 
     .modern-sidebar {
         width: 240px;
-        /* Full width on mobile when open */
         padding: 1.5rem 1rem;
         top: 135px;
-        /* Account for taller top bar on mobile */
         height: calc(100vh - 120px);
         transform: translateX(-100%);
-        /* Hidden by default */
         z-index: 1001;
-        /* Above overlay */
+        
     }
 
     .modern-sidebar.sidebar-open {
         transform: translateX(0);
-        /* Slide in */
+        
     }
 
     .sidebar-logo {
@@ -292,7 +287,7 @@
     }
 }
 
-/* Hamburger Button Styling */
+
 .hamburger-btn {
     background: linear-gradient(135deg, #3c6aa9 0%, #2a5186 100%);
     border: none;

@@ -29,7 +29,7 @@ export default function DataDisplay({ searchQuery = '' }) {
         fetchData();
     }, []);
 
-    // Load favorites from localStorage
+    
     useEffect(() => {
         const savedFavorites = localStorage.getItem('favoriteProfessors');
         if (savedFavorites) {
@@ -42,7 +42,7 @@ export default function DataDisplay({ searchQuery = '' }) {
         }
     }, []);
 
-    // Filter data based on search query
+   
     const filteredData = data.map(school => ({
         ...school,
         departments: school.departments?.map(dept => ({
@@ -66,22 +66,22 @@ export default function DataDisplay({ searchQuery = '' }) {
         })).filter(dept => dept.professors && dept.professors.length > 0)
     })).filter(school => school.departments && school.departments.length > 0);
 
-    // Check if professor is favorited
+    
     const isFavorited = (professorId) => {
         return favorites.some(fav => fav.id === professorId);
     };
 
-    // Toggle favorite status
+    
     const handleToggleFavorite = async (professor) => {
         const isFav = isFavorited(professor.id);
 
         if (isFav) {
-            // Remove from favorites
+            
             const updatedFavorites = favorites.filter(fav => fav.id !== professor.id);
             setFavorites(updatedFavorites);
             localStorage.setItem('favoriteProfessors', JSON.stringify(updatedFavorites));
         } else {
-            // Add to favorites
+            
             const updatedFavorites = [...favorites, professor];
             setFavorites(updatedFavorites);
             localStorage.setItem('favoriteProfessors', JSON.stringify(updatedFavorites));
@@ -125,7 +125,7 @@ export default function DataDisplay({ searchQuery = '' }) {
                                         </h6>
 
                                         {dept.professors?.map((prof, profIdx) => {
-                                            // Create professor object with unique ID for favoriting
+                                            
                                             const professorObj = {
                                                 id: `${school.school_name}-${dept.department_name}-${prof.name}`.replace(/\s+/g, '-'),
                                                 name: prof.name,

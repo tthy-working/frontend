@@ -6,7 +6,7 @@ export default function NotFound() {
     const navigate = useNavigate();
     const [currentTime, setCurrentTime] = useState(new Date());
 
-    // Update time every second
+   
     useEffect(() => {
         const timer = setInterval(() => setCurrentTime(new Date()), 1000);
         return () => clearInterval(timer);
@@ -25,7 +25,7 @@ export default function NotFound() {
 
     return (
         <div className="notfound-page">
-            {/* Info Bar */}
+            
             <div className="notfound-info-bar">
                 <div className="notfound-info-item">
                     <i className="fa-solid fa-clock me-2"></i>
@@ -42,7 +42,7 @@ export default function NotFound() {
                 </div>
             </div>
 
-            {/* Animated Background */}
+            
             <div className="notfound-background">
                 <div className="floating-shapes">
                     <div className="shape shape-1"></div>
@@ -53,9 +53,9 @@ export default function NotFound() {
                 </div>
             </div>
 
-            {/* Content */}
+           
             <div className="notfound-content">
-                {/* 404 Number */}
+                
                 <div className="error-number">
                     <span className="digit digit-4-1">4</span>
                     <span className="digit digit-0">
@@ -66,18 +66,18 @@ export default function NotFound() {
                     <span className="digit digit-4-2">4</span>
                 </div>
 
-                {/* Icon */}
+               
                 <div className="error-icon">
                     <i className="fa-solid fa-magnifying-glass"></i>
                 </div>
 
-                {/* Text */}
+                
                 <h1 className="error-title">Page Not Found</h1>
                 <p className="error-description">
                     Oops! The page you're looking for seems to have wandered off into the research archives.
                 </p>
 
-                {/* Buttons */}
+               
                 <div className="error-actions">
                     <button 
                         className="btn-home"
@@ -95,7 +95,7 @@ export default function NotFound() {
                     </button>
                 </div>
 
-                {/* Fun Suggestions */}
+               
                 <div className="suggestions">
                     <p className="suggestions-title">While you're here, you might want to:</p>
                     <div className="suggestions-grid">

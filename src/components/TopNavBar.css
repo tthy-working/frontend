@@ -13,7 +13,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Continuous moving gradient */
+
 @keyframes gradientMove {
     0% {
         background-position: 0% 0;
@@ -26,7 +26,6 @@
     }
 }
 
-/* Navbar links and buttons styling */
 .gradient-top-navbar .nav-link,
 .gradient-top-navbar .navbar-brand,
 .gradient-top-navbar button {

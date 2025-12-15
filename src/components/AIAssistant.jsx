@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { queryGemini } from '../services/gemini';
-import './AIAssistant.css'; // Add this import
+import './AIAssistant.css'; 
 
 export default function AIAssistant() {
     const [query, setQuery] = useState('');

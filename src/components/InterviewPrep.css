@@ -1,11 +1,11 @@
-/* Page Wrapper */
+
 .interview-prep-page {
     min-height: 100vh;
     background: #f4f1eb;
     padding-bottom: 0;
 }
 
-/* Enhanced Info Bar */
+
 .enhanced-info-bar {
     max-width: 900px;
     margin: 1.5rem auto 2.5rem;
@@ -50,7 +50,7 @@
     box-shadow: 0 12px 40px rgba(60, 106, 169, 0.15);
 }
 
-/* DateTime Card Specific */
+
 .datetime-info {
     background: linear-gradient(135deg, #ffffff 0%, #f4f1eb 100%);
 }
@@ -71,7 +71,6 @@
     }
 }
 
-/* User Card Specific */
 .user-info {
     background: linear-gradient(135deg, #f4f1eb 0%, #ffffff 100%);
 }
@@ -80,7 +79,7 @@
     background: linear-gradient(135deg, #6d75a9 0%, #867caf 100%);
 }
 
-/* Icon Container */
+
 .info-bar-icon {
     width: 70px;
     height: 70px;
@@ -99,7 +98,7 @@
     transform: rotate(5deg) scale(1.1);
 }
 
-/* Content */
+
 .info-bar-content {
     display: flex;
     flex-direction: column;
@@ -152,14 +151,14 @@
     font-style: italic;
 }
 
-/* User Name */
+
 .user-name {
     font-family: 'Inter', sans-serif;
     color: #6d75a9;
     font-size: 1.6rem;
 }
 
-/* User Status Badge */
+
 .user-status-badge {
     display: inline-flex;
     align-items: center;
@@ -195,7 +194,7 @@
     font-weight: 600;
 }
 
-/* Slide In Animation */
+
 @keyframes slideInDown {
     from {
         opacity: 0;
@@ -207,14 +206,14 @@
     }
 }
 
-/* Container */
+
 .interview-container {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 1rem 0;
 }
 
-/* Base Card Styles */
+
 .interview-card {
     background: #ffffff;
     border-radius: 20px;
@@ -235,7 +234,7 @@
     transform: translateY(-3px);
 }
 
-/* Shine Effect */
+
 .card-shine {
     position: absolute;
     top: 0;
@@ -251,7 +250,7 @@
     left: 150%;
 }
 
-/* Control Card */
+
 .control-card {
     background: linear-gradient(135deg, #f4f1eb 0%, #ffffff 100%);
 }
@@ -357,7 +356,6 @@
     flex-wrap: wrap;
 }
 
-/* Buttons */
 .btn-interview-test,
 .btn-interview-start,
 .btn-interview-end,
@@ -433,7 +431,7 @@ button:disabled {
     transform: none !important;
 }
 
-/* Spinner */
+
 .spinner-interview {
     display: inline-block;
     width: 1rem;
@@ -448,7 +446,7 @@ button:disabled {
     to { transform: rotate(360deg); }
 }
 
-/* Answer Card */
+
 .answer-card {
     background: linear-gradient(135deg, #ffffff 0%, #f4f1eb 100%);
 }
@@ -512,7 +510,7 @@ button:disabled {
     box-shadow: 0 6px 20px rgba(60, 106, 169, 0.4);
 }
 
-/* Conversation Card */
+
 .conversation-card {
     background: #f4f1eb;
 }
@@ -634,7 +632,7 @@ button:disabled {
     color: #ffffff;
 }
 
-/* Feedback Card */
+
 .feedback-card {
     background: linear-gradient(135deg, #f4f1eb 0%, #ffffff 100%);
 }
@@ -695,7 +693,7 @@ button:disabled {
     font-size: 1rem;
 }
 
-/* Animations */
+
 .fade-in {
     animation: fadeIn 0.6s ease-out;
 }
@@ -747,7 +745,7 @@ button:disabled {
     }
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .enhanced-info-bar {
         grid-template-columns: 1fr;

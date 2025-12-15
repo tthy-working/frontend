@@ -1,4 +1,4 @@
-/* Info Bar at Top */
+
 .notfound-info-bar {
     position: absolute;
     top: 0;
@@ -51,7 +51,7 @@
     background: linear-gradient(180deg, transparent, #867caf, transparent);
 }
 
-/* Page Container */
+
 .notfound-page {
     min-height: 100vh;
     background: linear-gradient(135deg, #f4f1eb 0%, #ffffff 50%, #f4f1eb 100%);
@@ -63,7 +63,6 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* Animated Background */
 .notfound-background {
     position: absolute;
     top: 0;
@@ -147,7 +146,6 @@
     }
 }
 
-/* Content */
 .notfound-content {
     position: relative;
     z-index: 1;
@@ -168,7 +166,7 @@
     }
 }
 
-/* 404 Number */
+
 .error-number {
     display: flex;
     justify-content: center;
@@ -209,7 +207,7 @@
     }
 }
 
-/* Zero Ring */
+
 .zero-ring {
     width: 140px;
     height: 180px;
@@ -238,7 +236,7 @@
     background: #f4f1eb;
 }
 
-/* Error Icon */
+
 .error-icon {
     width: 100px;
     height: 100px;
@@ -265,7 +263,7 @@
     }
 }
 
-/* Text */
+
 .error-title {
     font-size: 3rem;
     font-weight: 800;
@@ -291,7 +289,7 @@
     }
 }
 
-/* Action Buttons */
+
 .error-actions {
     display: flex;
     gap: 1rem;
@@ -339,7 +337,7 @@
     box-shadow: 0 12px 40px rgba(134, 124, 175, 0.3);
 }
 
-/* Suggestions */
+
 .suggestions {
     animation: fadeIn 1s ease-out 0.9s backwards;
 }
@@ -396,7 +394,7 @@
     color: #2a5186;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .notfound-info-bar {
         flex-direction: column;

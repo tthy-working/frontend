@@ -11,7 +11,7 @@ export default function InterviewPrep() {
     const [loading, setLoading] = useState(false);
     const [currentTime, setCurrentTime] = useState(new Date());
 
-    // Update time every second
+    
     useEffect(() => {
         const timer = setInterval(() => setCurrentTime(new Date()), 1000);
         return () => clearInterval(timer);
@@ -94,7 +94,7 @@ export default function InterviewPrep() {
 
     return (
         <>
-            {/* Control Panel Card */}
+       
             <div className="interview-card control-card fade-in">
                 <div className="card-shine"></div>
                 <div className="interview-card-body">
@@ -161,7 +161,7 @@ export default function InterviewPrep() {
                 </div>
             </div>
 
-            {/* Answer Input Card */}
+            
             {isActive && (
                 <div className="interview-card answer-card slide-in">
                     <div className="card-shine"></div>
@@ -201,7 +201,7 @@ export default function InterviewPrep() {
                 </div>
             )}
 
-            {/* Conversation Display Card */}
+           
             {conversation.length > 0 && (
                 <div className="interview-card conversation-card bounce-in">
                     <div className="conversation-header">
@@ -236,7 +236,7 @@ export default function InterviewPrep() {
                 </div>
             )}
 
-            {/* Feedback Card */}
+            
             {feedback && (
                 <div className="interview-card feedback-card bounce-in">
                     <div className="feedback-header">

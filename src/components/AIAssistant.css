@@ -1,4 +1,4 @@
-/* AI Card Container */
+
 .ai-card {
     background: #ffffff;
     border-radius: 24px;
@@ -9,7 +9,7 @@
     animation: fadeInUp 0.6s ease-out;
 }
 
-/* Card Glow Effect */
+
 .ai-card-glow {
     position: absolute;
     top: -50%;
@@ -26,7 +26,7 @@
     100% { transform: rotate(360deg); }
 }
 
-/* Card Header */
+
 .ai-card-header {
     background: linear-gradient(135deg, #3c6aa9 0%, #2a5186 100%);
     padding: 2rem;
@@ -81,14 +81,13 @@
     margin: 0;
 }
 
-/* Card Body */
 .ai-card-body {
     padding: 2rem;
     position: relative;
     z-index: 1;
 }
 
-/* Chat Container */
+
 .chat-container {
     max-height: 400px;
     overflow-y: auto;
@@ -114,7 +113,6 @@
     border-radius: 10px;
 }
 
-/* Chat Messages */
 .chat-message {
     display: flex;
     gap: 1rem;
@@ -203,7 +201,7 @@
     color: #ffffff;
 }
 
-/* Input Group */
+
 .input-group-custom {
     margin-bottom: 1.5rem;
 }
@@ -267,7 +265,6 @@
     transform: rotate(90deg) scale(1.1);
 }
 
-/* Buttons */
 .button-group {
     display: flex;
     gap: 1rem;
@@ -318,7 +315,7 @@
     box-shadow: 0 6px 20px rgba(195, 29, 29, 0.3);
 }
 
-/* Spinner */
+
 .spinner-ai {
     display: inline-block;
     width: 1rem;
@@ -334,7 +331,7 @@
     to { transform: rotate(360deg); }
 }
 
-/* Examples Section */
+
 .examples-section {
     margin-top: 2rem;
     padding: 1.5rem;
@@ -384,7 +381,6 @@
     cursor: not-allowed;
 }
 
-/* Alert */
 .alert-custom {
     padding: 1rem;
     border-radius: 12px;
@@ -426,7 +422,6 @@
     }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .ai-card-body {
         padding: 1.5rem;

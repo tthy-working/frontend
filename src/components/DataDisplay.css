@@ -13,7 +13,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    padding: 2px; /* border thickness */
+    padding: 2px; 
     border-radius: 6px;
     background: linear-gradient(90deg, #867caf, #c31d1d, #c75d60);
     -webkit-mask:
@@ -24,7 +24,7 @@
     z-index: -1;
 }
 
-/* Hover or click → filled gradient */
+
 .gradient-border-btn:hover,
 .gradient-border-btn:active,
 .gradient-border-btn:focus {

@@ -1,16 +1,16 @@
 import React from 'react';
 
 const EmailTemplateCard = ({ title, body }) => {
-    // Helper to parse subject and body
+    
     const getMailtoLink = () => {
         let subject = "Research Inquiry";
         let cleanBody = body;
 
-        // Check if body starts with "Subject:"
+        
         const subjectMatch = body.match(/^Subject:\s*(.+?)(\n|$)/i);
         if (subjectMatch) {
             subject = subjectMatch[1].trim();
-            // Remove the subject line from the body for the email content
+            
             cleanBody = body.replace(/^Subject:.+(\n|$)/i, '').trim();
         }
 

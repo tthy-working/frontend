@@ -8,7 +8,7 @@ export default function SideBar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
 
-  // Update time every second
+  
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => clearInterval(timer);
@@ -27,7 +27,7 @@ export default function SideBar() {
 
   const handleIconClick = (iconName, path) => {
     setActiveIcon(iconName);
-    setIsSidebarOpen(false); // Close sidebar on mobile after clicking
+    setIsSidebarOpen(false); 
     console.log(`${iconName} clicked`);
     if (path) {
       navigate(path);
@@ -45,9 +45,8 @@ export default function SideBar() {
 
   return (
     <>
-      {/* Top Info Bar */}
       <div className="top-info-bar">
-        {/* Hamburger Menu Button - Only visible on mobile */}
+       
         <button
           className="hamburger-btn d-lg-none"
           onClick={toggleSidebar}
@@ -56,12 +55,12 @@ export default function SideBar() {
           <i className={`fa-solid ${isSidebarOpen ? 'fa-times' : 'fa-bars'}`}></i>
         </button>
 
-        {/* Brand - Visible on all screens */}
+        
         <div className="d-flex align-items-center gap-2">
           <span className="fw-bold text-dark">AcadFinder</span>
         </div>
 
-        {/* Info Items */}
+        
         <div className="d-flex align-items-center gap-3 flex-wrap justify-content-center flex-grow-1">
           <div className="info-bar-item">
             <i className="fa-solid fa-clock"></i>
@@ -82,7 +81,7 @@ export default function SideBar() {
         </div>
       </div>
 
-      {/* Overlay for mobile */}
+  
       {isSidebarOpen && (
         <div
           className="sidebar-overlay d-lg-none"
@@ -90,9 +89,9 @@ export default function SideBar() {
         ></div>
       )}
 
-      {/* Sidebar */}
+  
       <div className={`modern-sidebar ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-        {/* Logo Section */}
+     
         <div className="sidebar-logo">
           <div className="logo-icon">
             <i className="fa-solid fa-flask"></i>
@@ -100,7 +99,7 @@ export default function SideBar() {
           <span className="logo-text">Research</span>
         </div>
 
-        {/* Navigation Items */}
+       
         <nav className="sidebar-nav">
           <button
             className={`sidebar-btn ${activeIcon === 'home' ? 'active' : ''}`}
@@ -147,26 +146,10 @@ export default function SideBar() {
             <span className="btn-text">Templates</span>
           </button>
 
-          <button
-            className={`sidebar-btn ${activeIcon === 'dashboard' ? 'active' : ''}`}
-            onClick={() => handleIconClick('dashboard', '/dashboard')}
-            title="Dashboard"
-          >
-            <i className="fa-brands fa-slack"></i>
-            <span className="btn-text">Dashboard</span>
-          </button>
-
-          <button
-            className={`sidebar-btn ${activeIcon === 'profile' ? 'active' : ''}`}
-            onClick={() => handleIconClick('profile', '/profile')}
-            title="Profile"
-          >
-            <i className="fa-solid fa-list"></i>
-            <span className="btn-text">Profile</span>
-          </button>
+          
         </nav>
 
-        {/* Logout at Bottom */}
+   
         <div className="sidebar-footer">
           <button
             className="sidebar-btn logout-btn"

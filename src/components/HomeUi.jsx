@@ -1,15 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
 import DataDisplay from './DataDisplay';
-import './HomeUi.css'; // Import the CSS file
+import './HomeUi.css'; 
 
 export default function HomeUi() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeTab, setActiveTab] = useState('search'); // 'search', 'ai', or 'bookmarked'
+  const [activeTab, setActiveTab] = useState('search');
   const searchBoxRef = useRef(null);
   const contentRef = useRef(null);
 
   useEffect(() => {
-    // Intersection Observer for scroll animations
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -24,7 +24,7 @@ export default function HomeUi() {
       }
     );
 
-    // Observe search box and content
+    
     if (searchBoxRef.current) {
       observer.observe(searchBoxRef.current);
     }
@@ -38,18 +38,18 @@ export default function HomeUi() {
   return (
     <>
       <div className="container-fluid p-4 blue-background">
-        {/* Add some top spacing to make scroll visible */}
+        
         <div style={{ height: '30vh' }}></div>
         
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8 col-xl-6">
             
-            {/* Tab Navigation */}
+           
             <div className="d-flex gap-2 mb-3 justify-content-center">
               
             </div>
 
-            {/* Search Box */}
+           
             <div 
               ref={searchBoxRef}
               className="bg-white rounded shadow p-4 mb-4 search-box card-animate"
@@ -80,7 +80,7 @@ export default function HomeUi() {
               </form>
             </div>
 
-            {/* Content Based on Active Tab */}
+       
             <div className="tab-content-wrapper">
               {activeTab === 'search' && (
                 <div 
@@ -112,7 +112,7 @@ export default function HomeUi() {
               )}
             </div>
 
-            {/* Add some bottom spacing to make scroll visible */}
+           
             <div style={{ height: '50vh' }}></div>
           </div>
         </div>

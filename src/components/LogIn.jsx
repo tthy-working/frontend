@@ -51,7 +51,7 @@ export default function LogIn() {
 
   return (
     <div className="login-container">
-      {/* Left Side - Branding */}
+      
       <div className="login-branding">
         <div className="branding-shape shape-1"></div>
         <div className="branding-shape shape-2"></div>
@@ -71,7 +71,7 @@ export default function LogIn() {
         </div>
       </div>
 
-      {/* Right Side - Login Form */}
+      
       <div className="login-form-container">
         <div className="login-form-wrapper animate-fade-in">
           <div className="form-header">

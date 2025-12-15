@@ -1,12 +1,12 @@
-/* Background using light orange */
+
 .blue-background {
-  background-color: #f4f1eb; /* light orange */
+  background-color: #f4f1eb; 
   min-height: 100vh;
   color: #000000;
   font-family: 'Inter', sans-serif;
 }
 
-/* Scroll animation setup */
+
 .card-animate {
   opacity: 0;
   transform: translateY(60px) scale(0.95);
@@ -19,14 +19,14 @@
   transform: translateY(0) scale(1);
 }
 
-/* Tab buttons */
+
 .tab-button {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  color: #000000 !important; /* black text */
+  color: #000000 !important; 
   border-color: rgba(0, 0, 0, 0.3) !important;
-  background-color: rgba(244, 241, 235, 0.15) !important; /* light orange translucent */
+  background-color: rgba(244, 241, 235, 0.15) !important; 
   font-weight: 500;
   border-radius: 8px;
 }
@@ -54,9 +54,9 @@
 }
 
 .tab-button.active-tab {
-  background-color: #ffffff !important; /* white */
+  background-color: #ffffff !important; 
   border-color: #000000 !important;
-  color: #3c6aa9 !important; /* palette blue */
+  color: #3c6aa9 !important; 
   font-weight: 600;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
@@ -65,7 +65,7 @@
   transform: translateY(0);
 }
 
-/* Search box with enhanced animations */
+
 .search-box {
   animation: slideDown 0.6s ease-out;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -77,7 +77,7 @@
   overflow: hidden;
 }
 
-/* Shimmer effect on hover */
+
 .search-box::after {
   content: '';
   position: absolute;
@@ -115,10 +115,10 @@
   border-color: #3c6aa9 !important;
 }
 
-/* Search icon with pulse animation */
+
 .search-icon {
   animation: pulse 3s ease-in-out infinite;
-  color: #867caf !important; /* darker blue */
+  color: #867caf !important; 
   transition: all 0.3s ease;
 }
 
@@ -151,7 +151,7 @@
   }
 }
 
-/* Slide down animation */
+
 @keyframes slideDown {
   from {
     opacity: 0;
